@@ -11,6 +11,17 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import {EffectsModule} from '@ngrx/effects';
+import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {NxModule} from '@nrwl/nx';
+import {reducers} from './app.reducer';
+import {counterReducer} from '../reducers/counter.reducer';
+import {counterInitialState} from'../status/counter.state';
+import {CounterEffects} from '../effects/counter.effects';
+import {HttpClientModule} from '@angular/common/http';
+import {CounterService} from "../service/counter.service";
+//import {CounterService,Sse} from "../service/counter.service";
 @NgModule({
   declarations: [
     MyApp,
@@ -20,8 +31,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage
   ],
   imports: [
+      HttpClientModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+      IonicModule.forRoot(MyApp),
+
+      StoreModule.forRoot(reducers),
+      EffectsModule.forRoot([]),
+      StoreDevtoolsModule.instrument({maxAge: 25}) ,
+      NxModule.forRoot(),
+      StoreModule.forFeature('counter', counterReducer, {initialState: counterInitialState}),
+      EffectsModule.forFeature([CounterEffects])
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,6 +54,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+      CounterService,//Sse,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
