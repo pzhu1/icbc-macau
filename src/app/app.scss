@@ -14,3 +14,35 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+.header-ios .toolbar-ios:last-child .toolbar-background-ios{
+  //background: transparent;
+  border-color: #607483;
+}
+
+.toolbar-title-ios .toolbar-title{
+  font-size:  16px;
+  color:  #55687f;
+}
+
+.toolbar-background{
+  background-color: #607483;
+}
+
+.toolbar-title{
+  color: #ffffff;
+}
+
+.tabs-ios .tabbar{
+  background-color: #f6f9fa;
+  -webkit-box-shadow: -1px 1px 8px 0px #aaaaaa;
+  padding-bottom: 5px;
+}
+
+.tabs-ios .tab-button-icon{
+  font-size: 24px;
+  color: #aaaaaa;
+}

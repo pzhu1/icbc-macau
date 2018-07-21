@@ -1,69 +1,72 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-
-  <h2 text-center>
-    {{counter$ | async}}
-  </h2>
-  <!-- <app-my-component></app-my-component> -->
-  <p text-center>
-    <button ion-button (click)="increment()"> +1</button>
-    <button ion-button (click)="decrement()"> -1</button>
-  </p>
-  <p text-center>
-    <button ion-button (click)="reset()"> Reset</button>
-  </p>
-
-
-
-  <table>
-    <tr>
-      <td>#ID</td>
-      <td>Type</td>
-      <td>Content</td>
-    </tr>
-    <tr *ngFor="let content of users">
-      <td>{{content.id}}</td>
-      <td>{{content.name}}</td>
-      <td>{{content.asset}}</td>
-    </tr>
-  </table>
-
-
-  <p text-center>
-    <button ion-button (click)="connect()"> Connect</button>
-  </p>
-  <p text-center>
-    <button ion-button (click)="adduser()"> AddUser</button>
-  </p>
-
-  <p text-center>
-    <button ion-button (click)="connect2(123)"> Connect2-123</button>
-  </p>
-  <p text-center>
-    <button ion-button (click)="connect2(234)"> Connect2-234</button>
-  </p>
-  <p text-center>
-    <button ion-button (click)="adduser2(123)"> AddUser2-123</button>
-  </p>
-  <p text-center>
-    <button ion-button (click)="adduser2(234)"> AddUser2-234</button>
-  </p>
-  <p text-center>
-    <button ion-button (click)="adduser3()"> AddUser3</button>
-  </p>
+<ion-content>
+  <div style="height: 90px; background-color: #607483;">
+    <ion-grid style="padding-left: 10px; padding-right: 10px;">
+      <ion-row style="color: #ffffff;">
+        <ion-col style="text-align:  center;line-height:  40px; padding: 0px;">
+          <ion-icon name="md-qr-scanner" style="font-size: 40px;"></ion-icon>
+        </ion-col>
+        <ion-col style="text-align:  center;line-height:  40px; padding: 0px;">
+          <i class="fa fa-qrcode" aria-hidden="true" style="font-size: 40px;"></i>
+        </ion-col>
+        <ion-col style="text-align:  center;line-height:  40px; padding: 0px;">
+          <ion-icon name="md-clipboard" style="font-size: 40px;"></ion-icon>
+        </ion-col>
+        <ion-col style="text-align:  center;line-height:  40px; padding: 0px;">
+          <i class="fa fa-wrench" aria-hidden="true" style="font-size: 35px;"></i>
+        </ion-col>
+      </ion-row>
+      <ion-row style="color: #ffffff;">
+        <ion-col style="text-align:  center;line-height:  20px; padding: 0px;">
+          掃碼
+        </ion-col>
+        <ion-col style="text-align:  center;line-height:  20px; padding: 0px;">
+          收款
+        </ion-col>
+        <ion-col style="text-align:  center;line-height:  20px; padding: 0px;">
+          訂單
+        </ion-col>
+        <ion-col style="text-align:  center;line-height:  20px; padding: 0px;">
+          設置
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div>
+    <ion-grid>
+      <ion-row style="text-align: center; height: 50px;">
+        <ion-col>
+          <i class="fa fa-credit-card-alt" aria-hidden="true" padding style="font-size: 22px; background: linear-gradient(to right, #6eb845, #6eb84566);-webkit-background-clip: text;color: transparent;"></i><br>
+        </ion-col>
+        <ion-col>
+          <i class="fa fa-refresh" aria-hidden="true" padding style="font-size: 26px; background: linear-gradient(to right, #ed4238, #ed423866);-webkit-background-clip: text;color: transparent;"></i><br>
+        </ion-col>
+        <ion-col>
+          <i class="fa fa-check-square-o" aria-hidden="true" padding style="font-size: 26px; background: linear-gradient(to right, #2eb2a5, #2eb2a566);-webkit-background-clip: text;color: transparent;"></i><br>
+        </ion-col>
+        <ion-col>
+          <i class="fa fa-user-o" aria-hidden="true" padding style="font-size: 26px; background: linear-gradient(to right, #2681b8, #2681b866);-webkit-background-clip: text;color: transparent;"></i><br>
+        </ion-col>
+      </ion-row>
+      <ion-row style="text-align: center;">
+        <ion-col>
+          <span style="font-size: 14px; color: #424242;">查詢卡號</span>
+        </ion-col>
+        <ion-col>
+          <span style="font-size: 14px; color: #424242;">退款</span>
+        </ion-col>
+        <ion-col>
+          <span style="font-size: 14px; color: #424242;">差錯交易</span>
+        </ion-col>
+        <ion-col>
+          <span style="font-size: 14px; color: #424242;">客服</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 
 </ion-content>
