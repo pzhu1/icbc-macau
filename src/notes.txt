@@ -1,5 +1,9 @@
-npm install typings echarts --global
+//npm install typings echarts --global
 
-npm install @types/echarts --save
+//npm install @types/echarts --save
 
-import * as echarts from 'echarts';
+//import * as echarts from 'echarts';
+
+
+npm i @swimlane/ngx-datatable
+ionic g page table
