@@ -21,6 +21,7 @@ import {counterInitialState} from'../status/counter.state';
 import {CounterEffects} from '../effects/counter.effects';
 import {HttpClientModule} from '@angular/common/http';
 import {CounterService} from "../service/counter.service";
+import { JPush } from '@jiguang-ionic/jpush';
 
 //import {CounterService,Sse} from "../service/counter.service";
 @NgModule({
@@ -57,6 +58,7 @@ import {CounterService} from "../service/counter.service";
   providers: [
     StatusBar,
     SplashScreen,
+      JPush,
       CounterService,//Sse,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
