@@ -21,8 +21,7 @@ import {counterInitialState} from'../status/counter.state';
 import {CounterEffects} from '../effects/counter.effects';
 import {HttpClientModule} from '@angular/common/http';
 import {CounterService} from "../service/counter.service";
-
-//import {CounterService,Sse} from "../service/counter.service";
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 @NgModule({
   declarations: [
     MyApp,
@@ -42,7 +41,8 @@ import {CounterService} from "../service/counter.service";
       StoreDevtoolsModule.instrument({maxAge: 25}) ,
       NxModule.forRoot(),
       StoreModule.forFeature('counter', counterReducer, {initialState: counterInitialState}),
-      EffectsModule.forFeature([CounterEffects])
+      EffectsModule.forFeature([CounterEffects]),
+      NgxDatatableModule
 
   ],
   bootstrap: [IonicApp],

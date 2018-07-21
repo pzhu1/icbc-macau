@@ -9,15 +9,54 @@ declare let echarts;
 })
 export class AboutPage implements OnInit{
 
-  @ViewChild('chart1') chart1: ElementRef;
-  @ViewChild('chart2') chart2: ElementRef;
+
+    showType:any;
+    @ViewChild('chart1') chart1: ElementRef;
+    @ViewChild('chart2') chart2: ElementRef;
+
+    rows = [
+        { name: 'Austin', gender: 'Male', company: 'Swimlane' },
+        { name: 'Dany', gender: 'Male', company: 'KFC' },
+        { name: 'Molly', gender: 'Female', company: 'Burger King' },
+    ];
+    columns = [
+        { prop: 'name' },
+        { name: 'Gender' },
+        { name: 'Company' , sortable: false }
+    ];
+
   constructor(public navCtrl: NavController) {
+        this.showType ='charts';
 
   }
 
+    // ionViewWillEnter(){
+    //   console.log("ionViewWillEnter")
+    //   this.showType ='charts';
+    //   this.initChart1()
+    //   this.initChart2()
+    //
+    //
+    // }
+
+    ionViewDidEnter() {
+        this.initChart1();
+        this.initChart2();
+    }
+
+    showWhat(){
+      console.log(this.showType);
+      if(this.showType == 'charts'){
+
+          this.initChart1()
+          this.initChart2()
+      }
+      else if(this.showType == 'data'){
+
+      }
+    }
   ngOnInit() {
-      this.initChart1()
-      this.initChart2()
+
   }
 
   initChart1(){
@@ -67,4 +106,5 @@ export class AboutPage implements OnInit{
 
         myChart.setOption(option);
     }
+
 }
