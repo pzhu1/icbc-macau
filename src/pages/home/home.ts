@@ -1,13 +1,13 @@
 
 import {Component, OnInit} from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,ModalController } from 'ionic-angular';
 import {Store, select} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 
 import {CounterActions} from '../../actions/counter.actions';
 import {AppState} from '../../app/app.status';
 import {CounterService} from "../../service/counter.service";
-
+import {Refund} from "./services/refund";
 
 const EventSource: any = window['EventSource'];
 
@@ -27,7 +27,12 @@ export class HomePage implements OnInit{
 
     counter$: Observable<number>;
 
-    constructor(public navCtrl: NavController,private store: Store<AppState> ,private counterService:CounterService) {
+    constructor(
+        public navCtrl: NavController,
+        private store: Store<AppState> ,
+        private counterService:CounterService,
+        public modalCtrl: ModalController
+    ) {
         //this.counter$ = this.store.pipe(select('counter', 'total'));
         this.store.dispatch(new CounterActions.ResetAction(1));
         this.counter$ = this.store.pipe(select('counter', 'total'));
@@ -101,6 +106,11 @@ export class HomePage implements OnInit{
     adduser3(){
         console.log("addUser!!")
         this.counterService.addUser3().toPromise().then(data=>console.log(data));
+    }
+
+    openModal() {
+        let modal = this.modalCtrl.create(Refund);
+        modal.present();
     }
 
 }
