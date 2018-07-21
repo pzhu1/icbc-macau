@@ -64,7 +64,7 @@ export class AboutPage implements OnInit{
 
       let option = {
           title: {
-              text: 'ECharts 入门示例'
+              text: ''
           },
           tooltip: {},
           legend: {

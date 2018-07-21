@@ -22,6 +22,9 @@ import {CounterEffects} from '../effects/counter.effects';
 import {HttpClientModule} from '@angular/common/http';
 import {CounterService} from "../service/counter.service";
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { JPush } from '@jiguang-ionic/jpush';
+
+//import {CounterService,Sse} from "../service/counter.service";
 @NgModule({
   declarations: [
     MyApp,
@@ -57,6 +60,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
   providers: [
     StatusBar,
     SplashScreen,
+      JPush,
       CounterService,//Sse,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
