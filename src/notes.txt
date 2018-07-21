@@ -1,0 +1,5 @@
+npm install typings echarts --global
+
+npm install @types/echarts --save
+
+import * as echarts from 'echarts';

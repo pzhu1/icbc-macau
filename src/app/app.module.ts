@@ -7,7 +7,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
+import {SigninPage} from "../pages/auth/signin";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -21,6 +21,7 @@ import {counterInitialState} from'../status/counter.state';
 import {CounterEffects} from '../effects/counter.effects';
 import {HttpClientModule} from '@angular/common/http';
 import {CounterService} from "../service/counter.service";
+
 //import {CounterService,Sse} from "../service/counter.service";
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {CounterService} from "../service/counter.service";
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+      SigninPage
   ],
   imports: [
       HttpClientModule,
@@ -49,7 +51,8 @@ import {CounterService} from "../service/counter.service";
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+      SigninPage
   ],
   providers: [
     StatusBar,
