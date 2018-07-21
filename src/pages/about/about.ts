@@ -15,14 +15,15 @@ export class AboutPage implements OnInit{
     @ViewChild('chart2') chart2: ElementRef;
 
     rows = [
-        { name: 'Austin', gender: 'Male', company: 'Swimlane' },
-        { name: 'Dany', gender: 'Male', company: 'KFC' },
-        { name: 'Molly', gender: 'Female', company: 'Burger King' },
+        { name: 'Austin', gender: 'Male', company: 'Swimlane',age:22 },
+        { name: 'Dany', gender: 'Male', company: 'KFC' ,age:33},
+        { name: 'Molly', gender: 'Female', company: 'Burger King', age:11}
     ];
     columns = [
         { prop: 'name' },
         { name: 'Gender' },
-        { name: 'Company' , sortable: false }
+        { name: 'Company' , sortable: false },
+        { name: 'age' }
     ];
 
   constructor(public navCtrl: NavController) {
