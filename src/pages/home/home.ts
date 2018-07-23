@@ -8,6 +8,10 @@ import {CounterActions} from '../../actions/counter.actions';
 import {AppState} from '../../app/app.status';
 import {CounterService} from "../../service/counter.service";
 import {Refund} from "./services/refund";
+import {Binsarch} from "./services/binsarch";
+import {Wrongtrx} from "./services/wrongtrx";
+import {Custservice} from "./services/custservice";
+
 
 const EventSource: any = window['EventSource'];
 
@@ -108,8 +112,23 @@ export class HomePage implements OnInit{
         this.counterService.addUser3().toPromise().then(data=>console.log(data));
     }
 
-    openModal() {
+    openRefundModal() {
         let modal = this.modalCtrl.create(Refund);
+        modal.present();
+    }
+
+    openBinsarchModal() {
+        let modal = this.modalCtrl.create(Binsarch);
+        modal.present();
+    }
+
+    openWrongtrxModal() {
+        let modal = this.modalCtrl.create(Wrongtrx);
+        modal.present();
+    }
+
+    openCustserviceModal() {
+        let modal = this.modalCtrl.create(Custservice);
         modal.present();
     }
 
