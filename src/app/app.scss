@@ -1,8 +1,7 @@
 // http://ionicframework.com/docs/theming/
-
-@import '~@swimlane/ngx-datatable/release/index.css';
-@import '~@swimlane/ngx-datatable/release/themes/material.css';
-@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+@import 'themes/bootstrap';
+@import 'themes/dark';
+@import 'assets/icons';
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These

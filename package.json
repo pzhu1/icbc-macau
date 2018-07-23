@@ -70,6 +70,10 @@
     "tslint": "~5.9.1"
   },
   "description": "An Ionic project",
+  "config": {
+    "ionic_sass": "./config/sass.config.js",
+    "ionic_copy": "./config/copy.config.js"
+  },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},

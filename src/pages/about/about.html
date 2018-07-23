@@ -1,23 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
   <ion-toolbar>
-    <ion-segment [(ngModel)]="showType" color="secondary" (ionChange)="showWhat()">
+    <ion-segment [(ngModel)]="showType" color="light" (ionChange)="showWhat()">
       <ion-segment-button value="charts">
-        <ion-icon name="camera">charts</ion-icon>
+        數據圖表
       </ion-segment-button>
       <ion-segment-button value="data">
-        <ion-icon name="bookmark">data</ion-icon>
+        報表數據
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
   <div #chart1 [hidden]="showType !='charts'" style="width:100%;height:400px;"></div>
   <div #chart2 [hidden]="showType !='charts'" style="width:100%;height:400px;"></div>
@@ -26,7 +21,7 @@
     <ngx-datatable
             [rows]="rows"
 
-            [columns]="columns" [columnMode]="'force'" [reorderable]="false" class="material">
+            [columns]="columns" [columnMode]="'force'" [reorderable]="false" class="bootstrap">
     </ngx-datatable>
   </div>
   <!--<div [ngSwitch]="showType">-->
