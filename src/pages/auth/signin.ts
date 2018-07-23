@@ -18,6 +18,12 @@ export class SigninPage {
 
     }
 
+    checkEnter(event,acc,psw){
+        console.log(event)
+        if(event.keyCode == 13)
+            this.signin(acc,psw);
+    }
+
     signin(acc,psw){
         console.log(acc,psw)
         if(acc == '88888888' && psw == '111111')
