@@ -18,13 +18,19 @@ export class SigninPage {
 
     }
 
+    checkEnter(event,acc,psw){
+        console.log(event)
+        if(event.keyCode == 13)
+            this.signin(acc,psw);
+    }
+
     signin(acc,psw){
         console.log(acc,psw)
-        if(acc == '88888888' && psw == '111111')
+        if(acc == '1' && psw == '1')
             this.navCtrl.push(TabsPage);
-        else if(acc !='88888888')
+        else if(acc !='1')
             this.presentAlert('account do not exist!')
-        else if(acc =='88888888' && psw != '111111')
+        else if(acc =='1' && psw != '1')
             this.presentAlert('wrong password!')
 
     }
