@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button start (click)="dismiss()">返回</button>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <table width="100%">
+    <tr>
+      <td align="center" height="400px">
+        <div style="text-align:  center;height:  300px;background-color:  #ffffff; width: 320px;box-shadow:  0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);border-radius:  30px;">
+          <table width="100%">
+            <tr>
+              <td align="center" height="60px">
+
+              </td>
+            </tr>
+            <tr>
+              <td align="center">
+                <button ion-button color="primary" block style="border-radius:30px; width: 200px;" color="secondary">查詢</button>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" height="60px">
+                請掃描以下二維碼
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div style="position:relative;color:#000;border:1px solid #000;width:100%;">
+                  <div style="position:absolute;left:30px;top:30px;z-index:100;width:200px;height:100px">
+                  </div>
+                  <div style="position:absolute;left:50px;top:60px;z-index:80;background:#FF0;width:400px;height:200px">
+                  </div>
+                </div>
+                <ion-icon name="qr-scanner"></ion-icon>
+                <qr-code [value]="'All QR Code data goes here!'" [size]="150"></qr-code>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+</ion-content>

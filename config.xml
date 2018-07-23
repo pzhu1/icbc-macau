@@ -86,4 +86,6 @@
     <plugin name="jpush-phonegap-plugin" spec="^3.4.2">
         <variable name="APP_KEY" value="38ed55f30a5df83d4729ea55" />
     </plugin>
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-qrscanner" spec="^2.6.0" />
 </widget>

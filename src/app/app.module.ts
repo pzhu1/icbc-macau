@@ -27,6 +27,9 @@ import {Binsarch} from "../pages/home/services/binsarch";
 import {Custservice} from "../pages/home/services/custservice";
 import {Refund} from "../pages/home/services/refund";
 import {Wrongtrx} from "../pages/home/services/wrongtrx";
+import {Qrcode} from "../pages/home/qrcode/qrcode";
+import { QRCodeModule } from 'angular2-qrcode';
+import { Camera } from '@ionic-native/camera';
 
 //import {CounterService,Sse} from "../service/counter.service";
 @NgModule({
@@ -40,13 +43,14 @@ import {Wrongtrx} from "../pages/home/services/wrongtrx";
         Binsarch,
         Custservice,
         Refund,
-        Wrongtrx
+        Wrongtrx,
+        Qrcode
     ],
     imports: [
         HttpClientModule,
         BrowserModule,
+        QRCodeModule,
         IonicModule.forRoot(MyApp),
-
         StoreModule.forRoot(reducers),
         EffectsModule.forRoot([]),
         StoreDevtoolsModule.instrument({maxAge: 25}),
@@ -67,10 +71,12 @@ import {Wrongtrx} from "../pages/home/services/wrongtrx";
         Binsarch,
         Custservice,
         Refund,
-        Wrongtrx
+        Wrongtrx,
+        Qrcode
     ],
     providers: [
         StatusBar,
+        Camera,
         SplashScreen,
         JPush,
         CounterService,//Sse,

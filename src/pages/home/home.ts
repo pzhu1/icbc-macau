@@ -11,6 +11,7 @@ import {Refund} from "./services/refund";
 import {Binsarch} from "./services/binsarch";
 import {Wrongtrx} from "./services/wrongtrx";
 import {Custservice} from "./services/custservice";
+import {Qrcode} from "./qrcode/qrcode";
 
 
 const EventSource: any = window['EventSource'];
@@ -129,6 +130,11 @@ export class HomePage implements OnInit{
 
     openCustserviceModal() {
         let modal = this.modalCtrl.create(Custservice);
+        modal.present();
+    }
+
+    openQrcodeModal() {
+        let modal = this.modalCtrl.create(Qrcode);
         modal.present();
     }
 
