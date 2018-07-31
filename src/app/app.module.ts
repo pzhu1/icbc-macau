@@ -21,6 +21,7 @@ import {counterInitialState} from '../status/counter.state';
 import {CounterEffects} from '../effects/counter.effects';
 import {HttpClientModule} from '@angular/common/http';
 import {CounterService} from "../service/counter.service";
+import {CardMerchantService} from "../service/card-merchant.service";
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {JPush} from '@jiguang-ionic/jpush';
 import {Binsarch} from "../pages/home/services/binsarch";
@@ -80,6 +81,7 @@ import { Camera } from '@ionic-native/camera';
         SplashScreen,
         JPush,
         CounterService,//Sse,
+        CardMerchantService,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })
