@@ -15,7 +15,7 @@ export class ContactPage {
 
   test() {
     console.log("test click!")
-    this.cardMerchantService.sendVerifyCode_rsa().toPromise().then(data=> console.log(data));
+    this.cardMerchantService.sendVerifyCode_rsa('66767311').toPromise().then(data=> console.log(data));
   }
 
 }
