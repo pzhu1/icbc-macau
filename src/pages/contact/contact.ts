@@ -17,17 +17,17 @@ export class ContactPage {
   }
 
   //send verifycode
-  test() {
+  test(mobile:any) {
     console.log("test click!")
-    this.cardMerchantService.sendVerifyCode_rsa('66767311').toPromise().then(data=> {
+    this.cardMerchantService.sendVerifyCode_rsa(mobile).toPromise().then(data=> {
       console.log(data);
     });
   }
 
   //check verifycode
-  test2() {
+  test2(mobile:any,verifycode:any) {
       console.log("test2 click!")
-      this.cardMerchantService.checkVerifyCode_rsa('66767311','960938').toPromise().then(data=> {
+      this.cardMerchantService.checkVerifyCode_rsa(mobile,verifycode).toPromise().then(data=> {
         console.log(data);
         console.log(Object(data).message);
         console.log(Object(Object(data).data).uid);
@@ -55,6 +55,21 @@ export class ContactPage {
       this.nativeStorage.getItem('SESSIONID')
           .then(
               data => console.log(data),
+              error => console.error(error)
+          );
+  }
+
+  test4() {
+
+      this.nativeStorage.getItem('SESSIONID')
+          .then(
+              data => {
+                  console.log(data);
+                  this.cardMerchantService.getSecondUsers(data).toPromise().then(data => {
+                      console.log(data);
+                      console.log((Object(data).data)[0].FIELD1)
+                  });
+              },
               error => console.error(error)
           );
   }

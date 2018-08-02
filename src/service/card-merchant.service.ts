@@ -76,4 +76,17 @@ export class CardMerchantService {
         return this.http.post(url,data,this.httpOptions);
     }
 
+    getSecondUsers(sessionid:any){
+
+        let str = "sessionId="+sessionid;
+
+        let sign = this.getSignInit(str);
+        let merCert = encodeURIComponent(this.pubilcKey);
+
+        let url = this.gwUrl+'cardmerchant/getseconduser'+'?'+str+'&'
+            +'sign='+sign+'&merCert='+merCert;
+        console.log(url);
+
+        return this.http.get(url);
+    }
 }

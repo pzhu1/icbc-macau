@@ -14,9 +14,19 @@
       @ionicframework
     </ion-item>
     <ion-item>
-      <button (click)="test()">send verifycode</button>
-      <button (click)="test2()">check verifycode</button>
+      <ion-input #mobile1 type="tel" placeholder="Mobile Input" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input #verifycode1 type="tel" placeholder="VerifyCode Input" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <button (click)="test(mobile1.value)">send verifycode</button>
+      <button (click)="test2(mobile1.value,verifycode1.value)">check verifycode</button>
+      <!--<button (click)="test('66767311')">send verifycode</button>-->
+      <!--<button (click)="test2('66767311','960938')">check verifycode</button>-->
       <button (click)="test3()">get UID</button>
+      <button (click)="test4()">get second users</button>
+
     </ion-item>
   </ion-list>
 </ion-content>
