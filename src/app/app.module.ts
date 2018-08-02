@@ -31,6 +31,7 @@ import {Wrongtrx} from "../pages/home/services/wrongtrx";
 import {Qrcode} from "../pages/home/qrcode/qrcode";
 import { QRCodeModule } from 'angular2-qrcode';
 import { Camera } from '@ionic-native/camera';
+import {NativeStorage} from "@ionic-native/native-storage";
 
 //import {CounterService,Sse} from "../service/counter.service";
 @NgModule({
@@ -82,6 +83,7 @@ import { Camera } from '@ionic-native/camera';
         JPush,
         CounterService,//Sse,
         CardMerchantService,
+        NativeStorage,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })

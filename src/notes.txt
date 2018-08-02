@@ -7,3 +7,13 @@
 
 npm i @swimlane/ngx-datatable
 ionic g page table
+
+Native Storage:
+ionic cordova plugin add cordova-plugin-nativestorage
+npm install --save @ionic-native/native-storage
+
+
+cordova platform add browser
+cordova run browser
+
+ionic cordova run browser
