@@ -25,7 +25,7 @@ export class MyApp {
         jpush.init();
         jpush.setDebugMode(true);
         console.log("Myapp:");
-        nativeStorage.getItem("SESSIONID").then(data=>console.log(data))
+        nativeStorage.getItem("SESSIONID").then(data=>console.log(data));
     });
   }
 }

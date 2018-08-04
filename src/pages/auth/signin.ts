@@ -21,30 +21,16 @@ export class SigninPage implements OnInit{
                 public cardMerchantService: CardMerchantService,
                 private nativeStorage: NativeStorage) {
         console.log("SigninPage constructor")
-        this.nativeStorage.getItem("SESSIONID").then(data=>{
-            this.cardMerchantService.checkLoginSession(data).toPromise().then(data=>{
-                console.log(data);
-                if(Object(data).code == "0")
-                    this.navCtrl.push(TabsPage);
 
-            })
-        })
 
     }
 
     //沟崽子们
-    ionViewDidLoad(){
-        this.nativeStorage.getItem("SESSIONID").then(data=>{
-            this.cardMerchantService.checkLoginSession(data).toPromise().then(data=>{
-                console.log(data);
-                if(Object(data).code == "0")
-                    this.navCtrl.push(TabsPage);
 
-            })
-        })
-    }
 
     ionViewWillEnter(){
+        console.log("SigninPage ionViewWillEnter")
+
         this.nativeStorage.getItem("SESSIONID").then(data=>{
             this.cardMerchantService.checkLoginSession(data).toPromise().then(data=>{
                 console.log(data);
@@ -55,28 +41,12 @@ export class SigninPage implements OnInit{
         })
     }
 
-    ionViewDidEnter(){
-        this.nativeStorage.getItem("SESSIONID").then(data=>{
-            this.cardMerchantService.checkLoginSession(data).toPromise().then(data=>{
-                console.log(data);
-                if(Object(data).code == "0")
-                    this.navCtrl.push(TabsPage);
 
-            })
-        })
-    }
 
 
     ngOnInit(){
         console.log("SigninPage Oninit")
-        this.nativeStorage.getItem("SESSIONID").then(data=>{
-            this.cardMerchantService.checkLoginSession(data).toPromise().then(data=>{
-                console.log(data);
-                if(Object(data).code == "0")
-                    this.navCtrl.push(TabsPage);
 
-            })
-        })
 
     }
     checkEnter(event,acc,psw){
