@@ -36,6 +36,18 @@ export class CardMerchantService {
         return sign;
     }
 
+    checkLoginSession(sessionid) {
+        let str = "sessionId="+sessionid;
+
+        let sign = this.getSignInit(str);
+        let merCert = encodeURIComponent(this.pubilcKey);
+
+        let url = this.gwUrl+'cardmerchant/getsessionContent'+'?'+str+'&'
+            +'sign='+sign+'&merCert='+merCert;
+        console.log(url);
+
+        return this.http.get(url);
+    }
 
     sendVerifyCode_rsa(mobile:any){
 
