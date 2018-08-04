@@ -32,6 +32,41 @@ export class SigninPage implements OnInit{
 
     }
 
+    //沟崽子们
+    ionViewDidLoad(){
+        this.nativeStorage.getItem("SESSIONID").then(data=>{
+            this.cardMerchantService.checkLoginSession(data).toPromise().then(data=>{
+                console.log(data);
+                if(Object(data).code == "0")
+                    this.navCtrl.push(TabsPage);
+
+            })
+        })
+    }
+
+    ionViewWillEnter(){
+        this.nativeStorage.getItem("SESSIONID").then(data=>{
+            this.cardMerchantService.checkLoginSession(data).toPromise().then(data=>{
+                console.log(data);
+                if(Object(data).code == "0")
+                    this.navCtrl.push(TabsPage);
+
+            })
+        })
+    }
+
+    ionViewDidEnter(){
+        this.nativeStorage.getItem("SESSIONID").then(data=>{
+            this.cardMerchantService.checkLoginSession(data).toPromise().then(data=>{
+                console.log(data);
+                if(Object(data).code == "0")
+                    this.navCtrl.push(TabsPage);
+
+            })
+        })
+    }
+
+
     ngOnInit(){
         console.log("SigninPage Oninit")
         this.nativeStorage.getItem("SESSIONID").then(data=>{
