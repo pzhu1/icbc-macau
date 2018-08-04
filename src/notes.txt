@@ -17,3 +17,8 @@ cordova platform add browser
 //cordova run browser
 
 ionic cordova run browser
+
+
+
+$ ionic cordova plugin add cordova-plugin-device
+$ npm install --save @ionic-native/device

@@ -24,6 +24,7 @@
     "@angular/router": "5.2.11",
     "@ionic-native/camera": "^4.10.0",
     "@ionic-native/core": "4.9.1",
+    "@ionic-native/device": "^4.11.0",
     "@ionic-native/native-storage": "^4.11.0",
     "@ionic-native/qr-scanner": "^4.10.0",
     "@ionic-native/splash-screen": "4.9.1",

@@ -32,7 +32,7 @@ import {Qrcode} from "../pages/home/qrcode/qrcode";
 import { QRCodeModule } from 'angular2-qrcode';
 import { Camera } from '@ionic-native/camera';
 import {NativeStorage} from "@ionic-native/native-storage";
-
+import { Device } from '@ionic-native/device';
 //import {CounterService,Sse} from "../service/counter.service";
 @NgModule({
     declarations: [
@@ -84,6 +84,7 @@ import {NativeStorage} from "@ionic-native/native-storage";
         CounterService,//Sse,
         CardMerchantService,
         NativeStorage,
+        Device,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })
