@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { TabsPage } from '../pages/tabs/tabs';
 import {SigninPage} from "../pages/auth/signin";
 import { JPush } from '@jiguang-ionic/jpush';
 import {NativeStorage} from "@ionic-native/native-storage";
@@ -13,7 +12,8 @@ import {NativeStorage} from "@ionic-native/native-storage";
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  rootPage:any = SigninPage;
+  //rootPage:any = SigninPage;
+  rootPage:any = null;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, jpush: JPush,
               nativeStorage: NativeStorage) {
@@ -24,8 +24,11 @@ export class MyApp {
       splashScreen.hide();
         jpush.init();
         jpush.setDebugMode(true);
-        console.log("Myapp:");
-        nativeStorage.getItem("SESSIONID").then(data=>console.log(data));
+        // console.log("Myapp:");
+        // nativeStorage.getItem("SESSIONID").then(data=>{
+        //   console.log(data);
+        // });
+        this.rootPage= SigninPage;
     });
   }
 }
