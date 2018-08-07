@@ -8,6 +8,7 @@ import {CounterActions} from '../../actions/counter.actions';
 import {AppState} from '../../app/app.status';
 import {CounterService} from "../../service/counter.service";
 import {Refund} from "./services/refund";
+import {Setup} from "./services/setup";
 import {Binsarch} from "./services/binsarch";
 import {Wrongtrx} from "./services/wrongtrx";
 import {Custservice} from "./services/custservice";
@@ -231,6 +232,11 @@ export class HomePage implements OnInit{
 
     openQrcodeModal() {
         let modal = this.modalCtrl.create(Qrcode);
+        modal.present();
+    }
+	
+	openSetupModal() {
+        let modal = this.modalCtrl.create(Setup);
         modal.present();
     }
 

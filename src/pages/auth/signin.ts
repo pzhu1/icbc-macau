@@ -76,7 +76,7 @@ export class SigninPage implements OnInit{
             console.log(Object(data).message);
             console.log(Object(Object(data).data).uid);
             console.log(Object(Object(data).data).sessionid);
-            this.nativeStorage.setItem('UID', Object(Object(data).data).uid)
+            /* this.nativeStorage.setItem('UID', Object(Object(data).data).uid)
                 .then(
                     () => console.log('Stored UID!'),
                     error => console.error('Error storing item', error)
@@ -85,7 +85,11 @@ export class SigninPage implements OnInit{
                 .then(
                     () => console.log('Stored SESSIONID!'),
                     error => console.error('Error storing item', error)
-                );
+                ); */
+				
+			localStorage.setItem('UID', Object(Object(data).data).uid);
+			localStorage.setItem('SESSIONID', Object(Object(data).data).sessionid);
+			
             if(Object(data).code === "0")
                 this.navCtrl.push(TabsPage);
             else if(Object(data).code === "1")

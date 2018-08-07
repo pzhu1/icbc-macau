@@ -1,0 +1,60 @@
+<ion-header *ngIf="!openModalMgt && !openModalAdd">
+  <ion-navbar>
+    <button ion-button start (click)="dismiss()">返回</button>
+    <ion-title style="text-align:center;" >设置</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-header *ngIf="openModalMgt">
+  <ion-navbar>
+    <button ion-button start (click)="closeModalMgt()">返回</button>
+    <ion-title style="text-align:center;" >用户管理</ion-title>
+	<button ion-button end (click)="addUser()">新增</button>
+  </ion-navbar>
+</ion-header>
+<ion-header *ngIf="openModalAdd">
+  <ion-navbar>
+    <button ion-button start (click)="closeModalAdd()">返回</button>
+    <ion-title style="text-align:center;"  >新增用户</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content *ngIf="!openModalMgt && !openModalAdd" >
+	<ion-row class="row custom" (click)="openUserMgt()" >
+		<ion-col>
+			<ion-row class="row">
+				<ion-icon name="people" role="img" class="icon icon-ios ion-ios-people left-icon" aria-label="people"></ion-icon>
+				<span>用户管理</span>
+			</ion-row>
+		</ion-col>
+		<ion-col class="right-item" >
+			<ion-icon class="icon ion-ios-arrow-forward icon-custom" ></ion-icon>
+		</ion-col>
+	</ion-row>
+</ion-content>
+<ion-content *ngIf="openModalMgt" style="padding-top: 1rem;" >
+	<ion-list class="list" >
+		<ion-item>user1</ion-item>
+		<ion-item>user2</ion-item>
+	</ion-list>
+</ion-content>
+<ion-content *ngIf="openModalAdd" style="padding-top: 6rem;" >
+	<ion-list>
+
+		<ion-item>
+			<ion-label floating>手机号</ion-label>
+			<ion-input name="mobile" type="number"  #mobile ></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>姓名</ion-label>
+			<ion-input name="name" type="text" #name ></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label floating>部门编号</ion-label>
+			<ion-input name="departmentid" type="text" #departmentid ></ion-input>
+		</ion-item>
+    
+	</ion-list>
+
+  <div padding>
+    <button ion-button color="primary" (click)="submitForm()" block>提交</button>
+  </div>
+</ion-content>

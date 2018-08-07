@@ -27,6 +27,7 @@ import {JPush} from '@jiguang-ionic/jpush';
 import {Binsarch} from "../pages/home/services/binsarch";
 import {Custservice} from "../pages/home/services/custservice";
 import {Refund} from "../pages/home/services/refund";
+import {Setup} from "../pages/home/services/setup";
 import {Wrongtrx} from "../pages/home/services/wrongtrx";
 import {Qrcode} from "../pages/home/qrcode/qrcode";
 import { QRCodeModule } from 'angular2-qrcode';
@@ -45,6 +46,7 @@ import { Device } from '@ionic-native/device';
         Binsarch,
         Custservice,
         Refund,
+		Setup,
         Wrongtrx,
         Qrcode
     ],
@@ -73,6 +75,7 @@ import { Device } from '@ionic-native/device';
         Binsarch,
         Custservice,
         Refund,
+		Setup,
         Wrongtrx,
         Qrcode
     ],
